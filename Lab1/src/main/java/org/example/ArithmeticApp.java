@@ -30,7 +30,7 @@ public class ArithmeticApp {
                 list.set(i-1, "sus");
             }
         }
-//        System.out.println(list);
+        System.out.println(list);
 
         int index = 0;
         while(list.get(index).equals("sus")){
