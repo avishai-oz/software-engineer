@@ -1,0 +1,5 @@
+Enter base (2/8/10/16):
+2
+Enter expression:
+1101 - 10 + 11 - 110
+The value of expression 1101 - 10 + 11 - 110 is : 1000

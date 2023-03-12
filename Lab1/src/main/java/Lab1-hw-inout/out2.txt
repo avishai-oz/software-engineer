@@ -1,0 +1,5 @@
+Enter base (2/8/10/16):
+16
+Enter expression:
+A00 / 0
+Error: trying to divide by 0 (evaluated: "0")

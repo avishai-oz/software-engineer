@@ -1,0 +1,5 @@
+Enter base (2/8/10/16):
+10
+Enter expression:
+59 ++ 1
+Error: invalid expression: ""

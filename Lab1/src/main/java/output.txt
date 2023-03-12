@@ -1,0 +1,31 @@
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression A00 - 1B * 11 / 9 + 3D is : A0A
+Enter base (2/8/10/16):
+Enter expression:
+Error: trying to divide by 0 (evaluated: "0")
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression 1C  + 2D + 3F -          4E is : 3A
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression A50 - B30 + A5 / F + E1 is : C
+Enter base (2/8/10/16):
+Error - this base isn't supported. Please enter a base (2/8/10/16):
+Enter expression:
+The value of expression 700 - 12 * 11 / 6 + 3 is : 664
+Enter base (2/8/10/16):
+Enter expression:
+Error: invalid expression: ""
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression 58 + 1 is : 59
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression 1101 - 10 + 11 - 110 is : 1000
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression 110 * 10 -   1 is : 1011
+Enter base (2/8/10/16):
+Enter expression:
+The value of expression 10 * 4 / 20 - 2 is : 0

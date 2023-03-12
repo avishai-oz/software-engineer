@@ -1,0 +1,5 @@
+Enter base (2/8/10/16):
+2
+Enter expression:
+110 * 10 -   1
+The value of expression 110 * 10 -   1 is : 1011

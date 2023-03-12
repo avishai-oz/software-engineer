@@ -1,0 +1,7 @@
+Enter base (2/8/10/16):
+5
+Error - this base isn't supported. Please enter a base (2/8/10/16):
+8
+Enter expression:
+700 - 12 * 11 / 6 + 3
+The value of expression 700 - 12 * 11 / 6 + 3 is : 664

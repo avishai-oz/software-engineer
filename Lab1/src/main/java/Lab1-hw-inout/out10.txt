@@ -1,0 +1,5 @@
+Enter base (2/8/10/16):
+8
+Enter expression:
+10 * 4 / 20 - 2
+The value of expression 10 * 4 / 20 - 2 is : 0

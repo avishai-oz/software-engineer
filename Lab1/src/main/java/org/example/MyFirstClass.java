@@ -5,7 +5,6 @@ public class MyFirstClass {
 
         int a = 4;
         int b = 0;
-        int c;
         int d = 1;
         int e = 1982736;
         String s = "Leon Gurin 214511214 & Avishai Oz 326489609";
@@ -20,10 +19,11 @@ public class MyFirstClass {
         int f = 5;
         a = a - f;
 
+        int i = 12;
         System.out.println(e);
         System.out.println(b);
+        System.out.println(i);
         System.out.println(a / d);
-
     }
 }
 
