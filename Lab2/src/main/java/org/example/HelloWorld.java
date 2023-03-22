@@ -5,6 +5,7 @@ public class HelloWorld implements Runnable {
         System.out.println("Hello world from thread number "
                 + Thread.currentThread().getName());
     }
+
     public static void main(String[] args) {
         Thread[] threads = new Thread[10]; // create an array of threads
         for (int i = 0; i < 10; i++) {
@@ -14,6 +15,12 @@ public class HelloWorld implements Runnable {
         }
         for (Thread thread : threads) {
             thread.start(); // start the threads
+            // task 3
+//            try {
+//                thread.join(); // wait for the threads to terminate
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
         for (Thread thread : threads) {
             try {
