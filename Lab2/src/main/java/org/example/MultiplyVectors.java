@@ -11,16 +11,17 @@ public class MultiplyVectors extends Thread {
     public MultiplyVectors(int[] vec1, int[] vec2 , int part , int pos){
         v1 = vec1;
         v2 = vec2;
-        int start = pos*part;
-        int stop = (pos+1)*part -1;
+        int start = pos;
+        int stop = vec1.length;
 
-        if (part == 1){
-            res += v1[pos]*v2[pos];
-        }
-
-        for (int i = start ; i <= stop ; i++){
-            res += v1[i]*v2[i];
-        }
+//        if (part == 1){
+//            res += v1[pos]*v2[pos];
+//        }
+//        else {
+            for (int i = start; i < stop; i= i+part) {
+                res += v1[i] * v2[i];
+            }
+//        }
     }
     public int res(){
         return res;
@@ -45,12 +46,12 @@ public class MultiplyVectors extends Thread {
 
         Random rng = new Random();
         for(int i=0; i<n; i++){
-            vec1[i] = rng.nextInt(10);
-            vec2[i] = rng.nextInt(10);
+            vec1[i] = rng.nextInt(100);
+            vec2[i] = rng.nextInt(1004);
         }
         MultiplyVectors[] threads = new MultiplyVectors[N]; // create an array of threads
         for (int i = 0; i < N; i++) {
-            threads[i] = new MultiplyVectors(vec1, vec2 , (n/N) , i );
+            threads[i] = new MultiplyVectors(vec1, vec2 , N , i % N );
         }
 
         for(MultiplyVectors thread : threads){
