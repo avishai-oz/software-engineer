@@ -5,20 +5,19 @@ import java.util.Scanner;
 //import java.util.stream.IntStream;
 
 public class MultiplyVectors extends Thread {
-    int[] v1, v2;
-    int res = 0 ;
+    long[] v1, v2;
+    long res = 0 ;
 
-    public MultiplyVectors(int[] vec1, int[] vec2 , int part , int pos){
+    public MultiplyVectors(long[] vec1, long[] vec2 , int part , int pos){
         v1 = vec1;
         v2 = vec2;
-        int start = pos;
         int stop = vec1.length;
 
-        for (int i = start; i < stop; i= i+part) {
+        for (int i = pos; i < stop; i= i+part) {
             res += v1[i] * v2[i];
         }
     }
-    public int res(){
+    public long res(){
         return res;
     }
     public synchronized void run() {
@@ -35,11 +34,11 @@ public class MultiplyVectors extends Thread {
         System.out.println("Please enter the number of threads (greater than 2): ");
         N = input.nextInt();
 
-        int[] vec1 = new int[n];
-        int[] vec2 = new int[n];
-        int result =0;
+        long[] vec1 = new long[n];
+        long[] vec2 = new long[n];
+        long result =0;
 
-        Random rng = new Random(5);
+        Random rng = new Random();
         for(int i=0; i<n; i++){
             vec1[i] = rng.nextInt();
             vec2[i] = rng.nextInt();
@@ -75,8 +74,5 @@ public class MultiplyVectors extends Thread {
         System.out.print("sum : [");
         System.out.print(result);
         System.out.println("]");
-
-//        System.out.println("Vector 1: " + vec1 + " multiplied by Vector 2: " + vec2 + " is:");
-//        System.out.println(vec3);
     }
 }
