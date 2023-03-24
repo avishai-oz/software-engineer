@@ -14,14 +14,9 @@ public class MultiplyVectors extends Thread {
         int start = pos;
         int stop = vec1.length;
 
-//        if (part == 1){
-//            res += v1[pos]*v2[pos];
-//        }
-//        else {
-            for (int i = start; i < stop; i= i+part) {
-                res += v1[i] * v2[i];
-            }
-//        }
+        for (int i = start; i < stop; i= i+part) {
+            res += v1[i] * v2[i];
+        }
     }
     public int res(){
         return res;
@@ -44,14 +39,14 @@ public class MultiplyVectors extends Thread {
         int[] vec2 = new int[n];
         int result =0;
 
-        Random rng = new Random();
+        Random rng = new Random(5);
         for(int i=0; i<n; i++){
-            vec1[i] = rng.nextInt(100);
-            vec2[i] = rng.nextInt(1004);
+            vec1[i] = rng.nextInt();
+            vec2[i] = rng.nextInt();
         }
         MultiplyVectors[] threads = new MultiplyVectors[N]; // create an array of threads
         for (int i = 0; i < N; i++) {
-            threads[i] = new MultiplyVectors(vec1, vec2 , N , i % N );
+            threads[i] = new MultiplyVectors(vec1, vec2 , N , i );
         }
 
         for(MultiplyVectors thread : threads){
@@ -62,7 +57,7 @@ public class MultiplyVectors extends Thread {
                 e.printStackTrace();
             }
         }
-        //print vec 1
+       //print vec 1
         System.out.print("Vector 1: [");
         for (int i=0 ; i<n ; i++){
             System.out.print(vec1[i] + " ,");
