@@ -12,6 +12,7 @@ public class App extends Application {
     private static Scene scene;
     @Override
     public void start(Stage stage) throws IOException {
+        stage.setTitle("Hello World Demo-326489069;214511214");
         scene = new Scene(loadFXML("primary"), 400, 200);
         stage.setScene(scene);
         stage.show();

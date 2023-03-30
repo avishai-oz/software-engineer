@@ -21,15 +21,20 @@ public class PrimaryController {
     private TextField helloTF; // Value injected by FXMLLoader
 
     @FXML
+    public void initialize() {
+        // Set the initial value of ctrTF to zero
+        ctrTF.setText("0");
+    }
+    @FXML
     void sayHello(ActionEvent event) {
         int ctr = Integer.parseInt(ctrTF.getText());
         if (ctr % 2 == 0){
             helloTF.setText("Hello World!");
         }
         else {
-            helloTF.clear();
+            helloTF.setText("");
         }
-        ctrTF.setText(Integer.toString(ctr++));
+        ctrTF.setText(Integer.toString((++ctr)));
     }
 
 }
