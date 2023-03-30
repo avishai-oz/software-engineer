@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
 
 public class PrimaryController {
 
+    @FXML // fx:id="ctrTF"
+    private TextField ctrTF; // Value injected by FXMLLoader
+
     @FXML // fx:id="helloBtn"
     private Button helloBtn; // Value injected by FXMLLoader
 
@@ -19,7 +22,14 @@ public class PrimaryController {
 
     @FXML
     void sayHello(ActionEvent event) {
-        helloTF.setText("Hello World!");
+        int ctr = Integer.parseInt(ctrTF.getText());
+        if (ctr % 2 == 0){
+            helloTF.setText("Hello World!");
+        }
+        else {
+            helloTF.clear();
+        }
+        ctrTF.setText(Integer.toString(ctr++));
     }
 
 }
