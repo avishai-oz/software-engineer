@@ -98,83 +98,169 @@ public class PrimaryController {
     private Button Three_Btn; // Value injected by FXMLLoader
 
     private List<Button> buttonList;
+    private int base;
+    private String expr;
 
     @FXML
     void chooseFromList(ActionEvent event) {
+        String ret = "";
+        int fromBase = base;
+        if(!Screen.getText().isEmpty()){
+            expr = Screen.getText();
+            if (base == 2 || base == 8 || base == 10 || base == 16) {
+                ret = evalExpression(expr, base, Screen);
+            }
+        }
         if (listBox.getValue().equals("BIN")) {
             for (int i = 0; i < buttonList.size(); i++) {
                 buttonList.get(i).setDisable(i >= 2);
+                base = 2;
+                convertToBase(ret, fromBase, base, Screen);
             }
         } else if (listBox.getValue().equals("OCT")) {
             for (int i = 0; i < buttonList.size(); i++) {
                 buttonList.get(i).setDisable(i >= 8);
+                base = 8;
+                convertToBase(ret, fromBase, base, Screen);
             }
         } else if (listBox.getValue().equals("DEC")) {
             for (int i = 0; i < buttonList.size(); i++) {
                 buttonList.get(i).setDisable(i >= 10);
+                base = 10;
+                convertToBase(ret, fromBase, base, Screen);
             }
         } else if (listBox.getValue().equals("HEX")) {
             for (Button button : buttonList) {
                 button.setDisable(false);
+                base = 16;
+                convertToBase(ret, fromBase, base, Screen);
             }
-        } else {
-
         }
     }
+
     @FXML
     void push(ActionEvent event) {
         Button num = (Button) event.getTarget(); // which button pressed
 
-        if (num.getText().equals("Clear")){ //which spacial button
-           Screen.clear();
-        }
-        else if(num.getText() == "="){
-            int j=0;
-            String expr = Screen.getText();
-            int base;
-            if (listBox.equals("Bin")){ //which base
-                base = 2;
-            }
-            else if(listBox.equals("OCT")){
-                base = 8;
-            }
-            else if(listBox.equals("DEC")){
-                base = 10;
-            }
-            else if(listBox.equals("HEX")){
-                base = 16;
-            }
-            for(int i=0; i<expr.length(); i++){
-                char temp = expr.charAt(i);
-                if (temp == '+' || temp == '-' || temp == '*' || temp == '/'){
-                    if(i == j){
-                        //System.out.println("Error: invalid expression: \"\"");
-                        Screen.setText("Error: invalid expression:");
-                        //return "-1";
-                    }
-                    String tempStr = expr.substring(j,i).trim();
-                    try{
-                        Integer.parseInt(tempStr, base);
-                    }catch (NumberFormatException e) {
-                        String baseCharset = charset.substring(0,base);
-                        for(int index=0; index<tempStr.length(); index++){
-                            if(baseCharset.indexOf(tempStr.charAt(index)) == -1){
-                                System.out.println("Error: invalid expression: \"" + tempStr.charAt(index) + "\"");
-                                return "-1";
-                            }
-                        }
-                        System.out.println("Error: invalid expression: \"\"");
-                        return "-1";
-                    }
-                    j = i+1;
-                    list.add(tempStr);
-                    list.add(temp + "");
+        if (num.getText().equals("Clear")) { //which spacial button
+            Screen.clear();
+        } else if (num.getText().equals("=")) {
+            expr = Screen.getText();
+            if (base == 2 || base == 8 || base == 10 || base == 16) {
+                String ret = evalExpression(expr, base, Screen);
+                if(!ret.equals("-1")){
+                    Screen.setText(ret);
                 }
+            } else {
+                Screen.setText("Error! Please choose a base for the calculation");
             }
-        }
-        else {
+        } else {
             Screen.setText(Screen.getText() + num.getText());
         }
+    }
+
+    public static void convertToBase(String ret, int fromBase, int base, TextField Screen){
+        if(!ret.equals("")){
+            Screen.setText(Integer.toString(Integer.parseInt(ret, fromBase), base).toUpperCase());
+        }
+    }
+    public static String evalExpression(String expr, int base, TextField Screen) {
+
+        List<String> list = new ArrayList<>();
+        expr = expr.toUpperCase();
+        String charset = "0123456789ABCDEF";
+
+        int j = 0;
+        for (int i = 0; i < expr.length(); i++) {
+            char temp = expr.charAt(i);
+            if (temp == '+' || temp == '-' || temp == '*' || temp == '/') {
+                if (i == j) {
+                    Screen.setText("Error: invalid expression: \"\"");
+                    return "-1";
+                }
+                String tempStr = expr.substring(j, i).trim();
+                try {
+                    Integer.parseInt(tempStr, base);
+                } catch (NumberFormatException e) {
+                    String baseCharset = charset.substring(0, base);
+                    for (int index = 0; index < tempStr.length(); index++) {
+                        if (baseCharset.indexOf(tempStr.charAt(index)) == -1) {
+                            Screen.setText("Error: invalid expression: \"" + tempStr.charAt(index) + "\"");
+                            return "-1";
+                        }
+                    }
+                    Screen.setText("Error: invalid expression: \"\"");
+                    return "-1";
+                }
+                j = i + 1;
+                list.add(tempStr);
+                list.add(temp + "");
+            }
+        }
+        String tempStr = expr.substring(j).trim();
+        try {
+            Integer.parseInt(tempStr, base);
+        } catch (NumberFormatException e) {
+            String baseCharset = charset.substring(0, base);
+            for (int index = 0; index < tempStr.length(); index++) {
+                if (baseCharset.indexOf(tempStr.charAt(index)) == -1) {
+                    Screen.setText("Error: invalid expression: \"" + tempStr.charAt(index) + "\"");
+                    return "-1";
+                }
+            }
+            Screen.setText("Error: invalid expression: \"\"");
+            return "-1";
+        }
+        list.add(tempStr);
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals("*")) {
+                int a = Integer.parseInt(list.get(i - 1), base);
+                int b = Integer.parseInt(list.get(i + 1), base);
+                int res = a * b;
+                list.set(i + 1, Integer.toString(res, base));
+                list.set(i, "X");
+                list.set(i - 1, "X");
+            } else if (list.get(i).equals("/")) {
+                int a = Integer.parseInt(list.get(i - 1), base);
+                int b = Integer.parseInt(list.get(i + 1), base);
+                if (b == 0) {
+                    Screen.setText("Error: trying to divide by 0 (evaluated: \"0\")");
+                    return "-1";
+                }
+                int res = a / b;
+                list.set(i + 1, Integer.toString(res, base));
+                list.set(i, "X");
+                list.set(i - 1, "X");
+            }
+        }
+
+        int index = 0;
+        while (list.get(index).equals("X")) {
+            index++;
+        }
+        int res = Integer.parseInt(list.get(index), base);
+
+        for (int i = index + 1; i < list.size(); i++) {
+            if (list.get(i).equals("+")) {
+                i++;
+                while (list.get(i).equals("X")) {
+                    i++;
+                }
+                res += Integer.parseInt(list.get(i), base);
+            } else if (list.get(i).equals("-")) {
+                i++;
+                while (list.get(i).equals("X")) {
+                    i++;
+                }
+                res -= Integer.parseInt(list.get(i), base);
+            } else {
+                Screen.setText("Error: invalid expression: \"\"");
+                return "-1";
+            }
+        }
+
+        return Integer.toString(res, base).toUpperCase();
     }
 
     @FXML
@@ -209,7 +295,10 @@ public class PrimaryController {
         listBox.getItems().add("OCT");
         listBox.getItems().add("DEC");
         listBox.getItems().add("HEX");
+        listBox.setValue("HEX");
 
+        base = 16;
+        expr = "";
         buttonList = new ArrayList<>();
 
         buttonList.add(Zero_Btn);
