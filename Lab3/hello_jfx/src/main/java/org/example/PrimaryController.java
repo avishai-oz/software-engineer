@@ -29,7 +29,7 @@ public class PrimaryController {
     void sayHello(ActionEvent event) {
         int ctr = Integer.parseInt(ctrTF.getText());
         if (ctr % 2 == 0){
-            helloTF.setText("Hello World!");
+
         }
         else {
             helloTF.setText("");

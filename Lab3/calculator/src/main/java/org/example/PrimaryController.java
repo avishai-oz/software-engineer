@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ public class PrimaryController {
 
     @FXML // fx:id="A_Btn"
     private Button A_Btn; // Value injected by FXMLLoader
+
 
     @FXML // fx:id="B_Btn"
     private Button B_Btn; // Value injected by FXMLLoader
@@ -117,6 +119,61 @@ public class PrimaryController {
             }
         } else {
 
+        }
+    }
+    @FXML
+    void push(ActionEvent event) {
+        Button num = (Button) event.getTarget(); // which button pressed
+
+        if (num.getText().equals("Clear")){ //which spacial button
+           Screen.clear();
+        }
+        else if(num.getText() == "="){
+            int j=0;
+            String expr = Screen.getText();
+            int base;
+            if (listBox.equals("Bin")){ //which base
+                base = 2;
+            }
+            else if(listBox.equals("OCT")){
+                base = 8;
+            }
+            else if(listBox.equals("DEC")){
+                base = 10;
+            }
+            else if(listBox.equals("HEX")){
+                base = 16;
+            }
+            for(int i=0; i<expr.length(); i++){
+                char temp = expr.charAt(i);
+                if (temp == '+' || temp == '-' || temp == '*' || temp == '/'){
+                    if(i == j){
+                        //System.out.println("Error: invalid expression: \"\"");
+                        Screen.setText("Error: invalid expression:");
+                        //return "-1";
+                    }
+                    String tempStr = expr.substring(j,i).trim();
+                    try{
+                        Integer.parseInt(tempStr, base);
+                    }catch (NumberFormatException e) {
+                        String baseCharset = charset.substring(0,base);
+                        for(int index=0; index<tempStr.length(); index++){
+                            if(baseCharset.indexOf(tempStr.charAt(index)) == -1){
+                                System.out.println("Error: invalid expression: \"" + tempStr.charAt(index) + "\"");
+                                return "-1";
+                            }
+                        }
+                        System.out.println("Error: invalid expression: \"\"");
+                        return "-1";
+                    }
+                    j = i+1;
+                    list.add(tempStr);
+                    list.add(temp + "");
+                }
+            }
+        }
+        else {
+            Screen.setText(Screen.getText() + num.getText());
         }
     }
 
