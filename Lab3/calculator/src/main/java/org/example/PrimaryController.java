@@ -148,7 +148,7 @@ public class PrimaryController {
             expr = Screen.getText();
             if (base == 2 || base == 8 || base == 10 || base == 16) {
                 String ret = evalExpression(expr, base, Screen);
-                if(!ret.equals("-1")){
+                if(!ret.equals("~")){
                     Screen.setText(ret);
                 }
             } else {
@@ -176,7 +176,7 @@ public class PrimaryController {
             if (temp == '+' || temp == '-' || temp == '*' || temp == '/') {
                 if (i == j) {
                     Screen.setText("Error: invalid expression: \"\"");
-                    return "-1";
+                    return "~";
                 }
                 String tempStr = expr.substring(j, i).trim();
                 try {
@@ -186,11 +186,11 @@ public class PrimaryController {
                     for (int index = 0; index < tempStr.length(); index++) {
                         if (baseCharset.indexOf(tempStr.charAt(index)) == -1) {
                             Screen.setText("Error: invalid expression: \"" + tempStr.charAt(index) + "\"");
-                            return "-1";
+                            return "~";
                         }
                     }
                     Screen.setText("Error: invalid expression: \"\"");
-                    return "-1";
+                    return "~";
                 }
                 j = i + 1;
                 list.add(tempStr);
@@ -209,7 +209,7 @@ public class PrimaryController {
                 }
             }
             Screen.setText("Error: invalid expression: \"\"");
-            return "-1";
+            return "~";
         }
         list.add(tempStr);
 
@@ -226,7 +226,7 @@ public class PrimaryController {
                 int b = Integer.parseInt(list.get(i + 1), base);
                 if (b == 0) {
                     Screen.setText("Error: trying to divide by 0 (evaluated: \"0\")");
-                    return "-1";
+                    return "~";
                 }
                 int res = a / b;
                 list.set(i + 1, Integer.toString(res, base));
@@ -256,7 +256,7 @@ public class PrimaryController {
                 res -= Integer.parseInt(list.get(i), base);
             } else {
                 Screen.setText("Error: invalid expression: \"\"");
-                return "-1";
+                return "~";
             }
         }
 

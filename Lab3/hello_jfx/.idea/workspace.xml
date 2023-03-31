@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98fba0ef-74b5-4d52-a731-12b5dbb4d8d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../calculator/src/main/java/org/example/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/src/main/java/org/example/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/src/main/resources/org/example/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/src/main/resources/org/example/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/org/example/PrimaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/PrimaryController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/calculator-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/calculator-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/PrimaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/SecondaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab2/Lab2-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PrimaryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +85,7 @@
       <workItem from="1680204089943" duration="64000" />
       <workItem from="1680265724063" duration="626000" />
       <workItem from="1680267640218" duration="1634000" />
+      <workItem from="1680280748390" duration="30000" />
     </task>
     <servers />
   </component>
