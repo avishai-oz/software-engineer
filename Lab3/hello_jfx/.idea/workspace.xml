@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98fba0ef-74b5-4d52-a731-12b5dbb4d8d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../calculator/calculator-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/dependency-reduced-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/calculator-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/PrimaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/classes/org/example/SecondaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab2/Lab2-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="98fba0ef-74b5-4d52-a731-12b5dbb4d8d2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +70,7 @@
       <workItem from="1680265724063" duration="626000" />
       <workItem from="1680267640218" duration="1634000" />
       <workItem from="1680280748390" duration="30000" />
+      <workItem from="1680623656137" duration="23000" />
     </task>
     <servers />
   </component>
