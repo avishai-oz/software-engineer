@@ -1,2 +1,2 @@
 
-SELECT ToyID FROM Toys ORDER BY ToyName ASC;
+SELECT * FROM Toys ORDER BY ToyName ASC;
