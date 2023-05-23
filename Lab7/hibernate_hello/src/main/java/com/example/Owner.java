@@ -45,4 +45,5 @@ public class Owner {
     public String getPassword() {
         return password;
     }
+
 }

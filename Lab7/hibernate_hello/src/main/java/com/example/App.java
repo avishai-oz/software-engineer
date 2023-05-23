@@ -38,9 +38,9 @@ public class App
     }
     private static void generateCars() throws Exception {
         Random random = new Random();
-
+        List<Owner> owners = getAllOwners();
         for (int i = 0; i < 10; i++) {
-            Car car = new Car("MOO-" + random.nextInt(), 100000, 2000 + random.nextInt(19));
+            Car car = new Car("MOO-" + random.nextInt(), 100000, 2000 + random.nextInt(19) , (owners.get(i)).getOwnerFirstName() );
             session.save(car);
             session.flush();
         }

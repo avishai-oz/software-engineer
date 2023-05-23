@@ -1,5 +1,6 @@
 package com.example;
 import javax.persistence.*;
+
 @Entity
 @Table(name = "cars")
 public class Car {
@@ -8,14 +9,16 @@ public class Car {
     private int id;
     private String licensePlate;
     private double price;
+    private String owner;
     @Column(name = "manufacturing_year")
     private int year;
     public Car(){}
-    public Car(String licensePlate, double price, int year) {
+    public Car(String licensePlate, double price, int year , String owner) {
         super();
         this.licensePlate = licensePlate;
         this.price = price;
         this.year = year;
+        this.owner = owner;
     }
 
     public String getLicensePlate() {
@@ -39,4 +42,6 @@ public class Car {
     public int getId() {
         return id;
     }
+    public String getOwner() { return owner; }
+    public void setOwner(String owner) { this.owner = owner; }
 }
