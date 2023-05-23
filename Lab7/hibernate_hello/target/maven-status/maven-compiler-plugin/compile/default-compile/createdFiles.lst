@@ -1,3 +1,7 @@
-com\example\Car.class
+com\example\Image.class
+com\example\JunctionTable_Garage_Owner.class
 com\example\App.class
+com\example\Car.class
+com\example\Garage.class
+com\example\JunctionTable_Car_Garage.class
 com\example\Owner.class

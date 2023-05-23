@@ -12,22 +12,16 @@ public class Owner {
     private String ownerLastName;
     private String password;
     private String email;
-    private int numberOfCars;
     public Owner() {}
-    Owner(String ownerFirstName, String ownerLastName, String password, String email, int numberOfCars){
+    Owner(String ownerFirstName, String ownerLastName, String password, String email){
         this.ownerFirstName = ownerFirstName;
         this.ownerLastName = ownerLastName;
         this.password = password;
         this.email = email;
-        this.numberOfCars = numberOfCars;
     }
 
     public int getId() {
         return id;
-    }
-
-    public int getNumberOfCars() {
-        return numberOfCars;
     }
 
     public String getEmail() {

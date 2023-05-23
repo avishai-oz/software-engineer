@@ -9,39 +9,39 @@ public class Car {
     private int id;
     private String licensePlate;
     private double price;
-    private String owner;
+    private int owner;
+    private int image;
     @Column(name = "manufacturing_year")
     private int year;
     public Car(){}
-    public Car(String licensePlate, double price, int year , String owner) {
-        super();
+    public Car(String licensePlate, double price, int year , int owner, int image) {
         this.licensePlate = licensePlate;
         this.price = price;
         this.year = year;
         this.owner = owner;
+        this.image = image;
     }
 
     public String getLicensePlate() {
         return licensePlate;
     }
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
+
     public double getPrice() {
         return price;
     }
-    public void setPrice(double price) {
-        this.price = price;
-    }
+
     public int getYear() {
         return year;
     }
-    public void setYear(int year) {
-        this.year = year;
-    }
+
     public int getId() {
         return id;
     }
-    public String getOwner() { return owner; }
-    public void setOwner(String owner) { this.owner = owner; }
+
+    public int getOwner() { return owner; }
+
+    public int getImage() {
+        return image;
+    }
+    public void setImage(int image) { this.image = image; }
 }
