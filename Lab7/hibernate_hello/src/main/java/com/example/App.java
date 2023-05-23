@@ -18,6 +18,7 @@ public class App
         Configuration configuration = new Configuration();
         // Add ALL of your entities here. You can also try adding a whole package.
         configuration.addAnnotatedClass(Car.class);
+        configuration.addAnnotatedClass(Owner.class);
 
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties())
@@ -26,18 +27,21 @@ public class App
         return configuration.buildSessionFactory(serviceRegistry);
     }
 
+    private static void generateOwners() throws Exception {
+        Random random = new Random();
+
+        for (int i = 0; i < 10; i++) {
+            Owner owner = new Owner();
+            session.save(owner);
+            session.flush();
+        }
+    }
     private static void generateCars() throws Exception {
         Random random = new Random();
 
         for (int i = 0; i < 10; i++) {
             Car car = new Car("MOO-" + random.nextInt(), 100000, 2000 + random.nextInt(19));
             session.save(car);
- /*
- * The call to session.flush() updates the DB immediately without ending the transaction.
- * Recommended to do after an arbitrary unit of work.
- * MANDATORY to do if you are saving a large amount of data - otherwise you may get
-cache errors.
- */
             session.flush();
         }
     }
@@ -49,8 +53,15 @@ cache errors.
         List<Car> data = session.createQuery(query).getResultList();
         return data;
     }
+    private static List<Owner> getAllOwners() throws Exception {
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Owner> query = builder.createQuery(Owner.class);
+        query.from(Owner.class);
+        List<Owner> data = session.createQuery(query).getResultList();
+        return data;
+    }
 
-    private static void printAllCars() throws Exception {
+    private static void printAllData() throws Exception {
         List<Car> cars = getAllCars();
         for (Car car : cars) {
             System.out.print("Id: ");
@@ -63,6 +74,23 @@ cache errors.
             System.out.print(car.getYear());
             System.out.print('\n');
         }
+
+        List<Owner> owners = getAllOwners();
+        for (Owner owner : owners ){
+            System.out.print("Id: ");
+            System.out.print(owner.getId());
+            System.out.print(", First Name: ");
+            System.out.print(owner.getOwnerFirstName());
+            System.out.print(", Last Name: ");
+            System.out.print(owner.getOwnerLastName());
+            System.out.print(", Email: ");
+            System.out.print(owner.getEmail());
+            System.out.print(", Password: ");
+            System.out.print(owner.getPassword());
+            System.out.print(", Number of cars: ");
+            System.out.print(owner.getNumberOfCars());
+            System.out.print('\n');
+        }
     }
 
     public static void main( String[] args ) {
@@ -71,10 +99,10 @@ cache errors.
             session = sessionFactory.openSession();
             session.beginTransaction();
 
-
             generateCars();
+            generateOwners();
 
-            printAllCars();
+            printAllData();
 
             session.getTransaction().commit(); // Save everything.
 

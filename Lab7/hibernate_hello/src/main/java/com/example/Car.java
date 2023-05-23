@@ -10,6 +10,7 @@ public class Car {
     private double price;
     @Column(name = "manufacturing_year")
     private int year;
+    public Car(){}
     public Car(String licensePlate, double price, int year) {
         super();
         this.licensePlate = licensePlate;
