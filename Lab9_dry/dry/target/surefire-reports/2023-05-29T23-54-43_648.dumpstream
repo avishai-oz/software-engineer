@@ -1,0 +1,4 @@
+# Created at 2023-05-29T23:54:43.876
+Boot Manifest-JAR contains absolute paths in classpath 'D:\VISUAL STUDIO CODE\Software Engineering\Lab9_dry\dry\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

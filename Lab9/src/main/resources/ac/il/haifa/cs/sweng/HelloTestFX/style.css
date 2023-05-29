@@ -1,0 +1,19 @@
+.body {
+    -fx-margin-left: 200px;
+    -fx-background-color: #000000;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: #FFFAFA;
+    -fx-font: Ariel;
+    -fx-font-size: 24;
+    -fx-text-fill: #FFFAFA;
+}
+
+.textField {
+    -fx-background-color: transparent;
+    -fx-font-size: 36;
+    -fx-font: Ariel;
+    -fx-text-fill: #FFFAFA;
+}
