@@ -34,6 +34,17 @@ public class AppTest {
     }
 
     @Test
+    public void testArrayContent() {
+        String[] appArr = newApp.getArr();
+        String[] testArr = {"apple", "banana", "coconut", "jordan"};
+        assertNotNull(appArr);
+        assertEquals(4, appArr.length);
+        for(int i=0; i<appArr.length; i++) {
+            assertEquals(appArr[i], testArr[i]);
+        }
+    }
+
+    @Test
     public void testMain() {
         // test 1:
         try{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.AppTest" time="0.054" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.example.AppTest" time="0.046" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\Leon\.jdks\corretto-17.0.6\bin"/>
-    <property name="sun.java.command" value="C:\Users\Leon\AppData\Local\Temp\surefire13256508586937968513\surefirebooter3305818837242037805.jar C:\Users\Leon\AppData\Local\Temp\surefire13256508586937968513 2023-05-30T00-19-51_998-jvmRun1 surefire2251842546744229487tmp surefire_07173452993512124252tmp"/>
+    <property name="sun.java.command" value="C:\Users\Leon\AppData\Local\Temp\surefire12483465213211551817\surefirebooter366461271147680036.jar C:\Users\Leon\AppData\Local\Temp\surefire12483465213211551817 2023-06-09T19-06-58_097-jvmRun1 surefire11438012236825787187tmp surefire_09772565215756268770tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\VISUAL STUDIO CODE\Software Engineering\Lab9_dry\dry\target\test-classes;D:\VISUAL STUDIO CODE\Software Engineering\Lab9_dry\dry\target\classes;C:\Users\Leon\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.2\junit-platform-launcher-1.8.2.jar;C:\Users\Leon\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\Leon\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Leon\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\Leon\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Leon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\Leon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Leon\AppData\Local\Temp\surefire13256508586937968513\surefirebooter3305818837242037805.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Leon\AppData\Local\Temp\surefire12483465213211551817\surefirebooter366461271147680036.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.6+10-LTS"/>
@@ -58,7 +58,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testMain" classname="org.example.AppTest" time="0.035"/>
-  <testcase name="testAddBasic" classname="org.example.AppTest" time="0.003"/>
-  <testcase name="testCommutativeness" classname="org.example.AppTest" time="0.001"/>
+  <testcase name="testMain" classname="org.example.AppTest" time="0.024"/>
+  <testcase name="testAddBasic" classname="org.example.AppTest" time="0.002"/>
+  <testcase name="testCommutativeness" classname="org.example.AppTest" time="0.002"/>
+  <testcase name="testArrayContent" classname="org.example.AppTest" time="0.003"/>
 </testsuite>
