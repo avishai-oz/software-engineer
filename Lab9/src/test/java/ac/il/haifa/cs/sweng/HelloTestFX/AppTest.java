@@ -49,4 +49,9 @@ public class AppTest {
 		FxAssert.verifyThat("#textField", TextInputControlMatchers.hasText(""));
 	}
 
+	@Test
+	void test_start_stage() {
+
+	}
+
 }
